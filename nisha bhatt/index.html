@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Note Sharing Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    
+    <nav>
+        <div class="logo">
+            <img src="https://i.pinimg.com/564x/c3/be/3f/c3be3f253c3fe3ab546ed9a6c2adeffa.jpg" alt="Logo">
+            <p class="text-uppercase fs-2 text fw-bold">NOTES SHARING</p>
+
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="view_notes.html">View Notes</a></li>
+            <li><a href="upload_notes.html">Upload Notes</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success btn-sm" type="submit">Search</button>
+        </form>
+</nav>
+
+    <!-- Home Page -->
+    <section class="home">
+        <div class="background-image">
+            <h1>Register and start contributing today</h1>
+            <a href="signup.html" class="btn">Sign Up</a>
+        </div>
+    </section>
+
+    <!-- View Notes Page -->
+    <section class="view-notes">
+        <table>
+            <thead>
+                <tr>
+                    <th>Note Name</th>
+                    <th>Subject</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>soniya paneru </td>
+                    <td>networkprogramming</td>
+                    <td><a href="download_notes.html" class="btn">Download</a></td>
+                </tr>
+                <tr>
+                    <td>sudha kalauni</td>
+                    <td>advance java</td>
+                    <td><a href="download_notes.html" class="btn">Download</a></td>
+                </tr>
+                <tr>
+                    <td>College Notes</td>
+                    <td>BCA</td>
+                    <td><a href="download_notes.html" class="btn">Download</a></td>
+                </tr>
+                <tr>
+                
+                <!-- Add more notes here -->
+            </tbody>
+        </table>
+    </section>
+    <!-- Upload Notes Page -->
+    <section class="upload-notes">
+        <form id="uploadForm" method="post" action="upload.php" enctype="multipart/form-data"
+            onsubmit="return validateForm()">
+            <div>
+                <label for="noteTitle">Note Title:</label>
+                <input type="text" id="noteTitle" name="noteTitle" required>
+            </div>
+            <div>
+                <label for="noteDescription">Note Description:</label>
+                <textarea id="noteDescription" name="noteDescription" required></textarea>
+            </div>
+            <div>
+                <label for="noteFile">Note File:</label>
+                <input type="file" id="noteFile" name="noteFile" required>
+            </div>
+            <button type="submit" class="btn">Upload</button>
+        </form>
+    </section>
+    <section class="footer">
+    
+        <p>Find Us On &nbsp;<i class="fa-brands fa-square-instagram fa-beat"></i> &nbsp;<i
+                class="fa-brands fa-twitter fa-beat"></i> &nbsp;<i class="fa-brands fa-facebook fa-beat"></i> </p>
+    </section>
+    <script>
+        function validateForm() {
+            var noteTitle = document.getElementById("noteTitle").value;
+            var noteDescription = document.getElementById("noteDescription").value;
+            var noteFile = document.getElementById("noteFile").value;
+
+            if (noteTitle === "" || noteDescription === "" || noteFile === "") {
+                alert("Please fill in all the fields.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>
